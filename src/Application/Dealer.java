@@ -1,3 +1,5 @@
+package Application;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +11,11 @@ import java.util.Arrays;
  *
  * @author anish
  */
+
+
 public class Dealer {
+    
+    
     ArrayList<Card> hand;//represents the dealer's hand
 private int handvalue=0;//value of the dealer's hand (starts at 0)
 private Card[] aHand;//used to convert the dealer's hand to an array
@@ -138,4 +144,5 @@ public int takeTurn(Deck deck)
     return handvalue;
 }
         }
+
 

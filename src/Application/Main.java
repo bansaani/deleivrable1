@@ -1,3 +1,6 @@
+
+package Application;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,21 +11,19 @@ import java.util.*;
  *
  * @author anish
  */
-public class Main {
-    private static int cash;//cash the user bets with
+public class Main {//cash the user bets with
 private static int bet;//how much the user wants to bet
 private static int AceCounter;//how many aces are in the user's hand
 private static ArrayList<Card> hand;//represents the user's hand
-private static int handvalue;//the value of the user's hand
-private static String name;//name of the user
+private static int handvalue;//name of the user
 public static void main(String[] args){
     System.out.println("Hi! What is your name?");
     Scanner scan = new Scanner(System.in);
-    name = scan.nextLine();
+    String name = scan.nextLine();
     System.out.println("Hello, "+name+", lets play some BlackJack!");
     System.out.println("How much cash do you want to start with?");
     Scanner money = new Scanner(System.in);
-    cash = money.nextInt();
+    int cash = money.nextInt();
     System.out.println("You start with cash: "+cash);
     while(cash>0){
         Deck deck = new Deck();//initialize deck, dealer, hands, and set the bet.
@@ -212,7 +213,8 @@ public static int Bet(int cash)
 public static void Win()
 {
     System.out.println("Congratulations, you win!");
-    cash=cash+bet;
+    int cash = 0;
+    cash = cash+bet;
     System.out.println("Cash: "+cash);
 }
 /*
@@ -221,13 +223,14 @@ public static void Win()
 public static void Lose()
 {
     System.out.println("Sorry, you lose!");
-    cash=cash-bet;
+    int cash = 0;
+    cash = cash-bet;
     System.out.println("Cash: "+cash);
 }
 /*
  * Called if the user pushes
  */
-public static void Push()
+public static void Push(String cash)
 {
     System.out.println("It's a push!");
     System.out.println("You get your money back.");
@@ -298,5 +301,9 @@ public static void fivecardtrick()
     System.out.println("You have achieved a five card trick!");
     Win();
 }
+
+    private static void Push() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
                 }
                 
